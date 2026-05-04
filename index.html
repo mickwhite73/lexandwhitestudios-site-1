@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lex & White Studios</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Protect Pro | Lex & White Studios</title>
+
+    <meta name="description" content="Web Protect Pro is a privacy-first Windows 64-bit desktop browser by Lex & White Studios.">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dark.css">
 </head>
+<body>
 
-<body class="theme-dark">
+    <header class="site-header">
+        <div class="brand">LEX & WHITE STUDIOS</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#download">Download</a>
+        </nav>
+    </header>
 
-<header class="topbar">
-    <div class="logo">LEX & WHITE STUDIOS</div>
+    <main>
+        <section class="hero" id="download">
+            <div class="badge">Windows 64-bit only</div>
 
-    <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#refunds">Refunds</a>
-    </nav>
+            <h1>Web Protect Pro</h1>
 
-    <button id="themeToggle" class="theme-btn">🌙</button>
-</header>
+            <p class="hero-text">
+                A modern, privacy-first Windows browser built by Lex & White Studios.
+                Designed to reduce tracking, block distractions, and give users more control.
+            </p>
 
-<main class="page-shell">
+            <div class="hero-actions">
+                <a class="download-btn"
+                   href="https://github.com/lexandwhitestudios/web-protect-pro/releases/latest/download/WebStudio.Package_1.0.0.0_x64.msix"
+                   download>
+                    Download Web Protect Pro
+                </a>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="badge">Premium Software • Privacy First</div>
+                <span class="price-pill">$20 AUD / 3 years</span>
+            </div>
 
-        <h1>Web Protect Pro</h1>
+            <p class="small-note">
+                MSIX installer. Requires Windows 64-bit.
+            </p>
+        </section>
 
-        <p class="hero-text">
-            A modern, privacy‑first browser engineered by Lex & White Studios.
-            Fast, secure, and built for real‑world use.
+        <section class="features" id="features">
+            <article class="feature-card">
+                <h2>Privacy First</h2>
+                <p>Built-in ad and tracker blocking helps reduce unwanted tracking and browsing noise.</p>
+            </article>
+
+            <article class="feature-card">
+                <h2>Modern Interface</h2>
+                <p>Clean multi-page browsing with quick URLs, favourites, privacy controls, and smart tools.</p>
+            </article>
+
+            <article class="feature-card">
+                <h2>Secure Options</h2>
+                <p>Optional DNS controls, privacy modes, popup controls, and safer browsing defaults.</p>
+            </article>
+        </section>
+
+        <section class="pricing-card" id="pricing">
+            <h2>Simple Pricing</h2>
+            <div class="price">$20 AUD</div>
+            <p>3 years access. No monthly subscription.</p>
+            <p class="small-note">Built for Windows 64-bit desktop users.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <button onclick="showInfo('about')">About Us</button>
+            <button onclick="showInfo('contact')">Contact</button>
+            <button onclick="showInfo('refunds')">Refund Policy</button>
+        </div>
+
+        <div id="info-box" class="info-box" hidden></div>
+
+        <p class="copyright">
+            © Lex & White Studios — Web Protect Pro
         </p>
+    </footer>
 
-        <div class="hero-actions">
-            <a class="download-btn" href="#">Download Now</a>
-            <div class="price-pill">$29 • One‑time purchase</div>
-        </div>
+    <script>
+        function showInfo(type) {
+            const box = document.getElementById("info-box");
 
-        <p class="small-note">Instant download • Lifetime updates</p>
-    </section>
+            const content = {
+                about: `
+                    <h3>About Lex & White Studios</h3>
+                    <p>Lex & White Studios builds privacy-focused software for everyday users who want cleaner, safer browsing tools.</p>
+                `,
+                contact: `
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:support@lexandwhitestudios.com">support@lexandwhitestudios.com</a></p>
+                `,
+                refunds: `
+                    <h3>Refund Policy</h3>
+                    <p>If you have an issue with your purchase, contact support and we will review it fairly. Refund terms may depend on purchase status, activation, and applicable consumer law.</p>
+                `
+            };
 
-    <!-- FEATURE CARDS -->
-    <section class="cards">
-        <div class="card">
-            <h2>Privacy First</h2>
-            <p>Your data stays on your device. No tracking, no analytics, no compromise.</p>
-        </div>
+            box.innerHTML = content[type];
+            box.hidden = false;
+            box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+    </script>
 
-        <div class="card">
-            <h2>Modern UI</h2>
-            <p>A clean, minimal interface designed for clarity, speed, and comfort.</p>
-        </div>
-
-        <div class="card">
-            <h2>Performance</h2>
-            <p>Optimised for real‑world browsing with smooth animations and low overhead.</p>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="pricing">
-        <h2>Simple Pricing</h2>
-        <p>One purchase. Lifetime updates. No subscriptions.</p>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="info-section">
-        <h2>About Us</h2>
-        <p>
-            Lex & White Studios Pty Ltd is an Australian software company focused on
-            building clean, modern, privacy‑respecting tools for everyday people.
-        </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="info-section">
-        <h2>Contact Us</h2>
-        <p>Email: support@lexandwhitestudios.com</p>
-        <p>ABN: (add your ABN here)</p>
-    </section>
-
-    <!-- REFUNDS -->
-    <section id="refunds" class="info-section">
-        <h2>Refund Policy</h2>
-        <p>
-            We offer refunds within 14 days of purchase if the product does not function
-            as advertised. Contact support for assistance.
-        </p>
-    </section>
-
-</main>
-
-<footer>
-    © 2026 Lex & White Studios Pty Ltd — All rights reserved.
-</footer>
-
-<script src="theme.js"></script>
 </body>
 </html>
